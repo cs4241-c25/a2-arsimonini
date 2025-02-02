@@ -4,14 +4,17 @@ const http = require( "node:http" ),
     // to install the mime library if you're testing this on your local machine.
     // However, Glitch will install it automatically by looking in your package.json
     // file.
+
+    //Weird Stuff with Mime, Don't Touch
     mime = require( "mime" ),
     dir  = "public/",
     port = 3000
 
+//Appdata, I should likely try to update this
 const appdata = [
-    { "model": "toyota", "year": 1999, "mpg": 23 },
-    { "model": "honda", "year": 2004, "mpg": 30 },
-    { "model": "ford", "year": 1987, "mpg": 14}
+   /* { "favConsole": "toyota", "favGame": "Mario", "completed?": "Yes" },
+    { "favConsole": "nintendo", "favGame": "Luigi", "completed?": "No" },
+    { "favConsole": "xbox", "favGame": "Zelda", "completed?": "Yes" }*/
 ]
 
 // let fullURL = ""
@@ -42,16 +45,23 @@ const handlePost = function( request, response ) {
 
     request.on( "data", function( data ) {
         dataString += data
+        console.log( "Request.on(data, function(data)): " + dataString )
+
     })
 
-    request.on( "end", function() {
-        console.log( JSON.parse( dataString ) )
+    request.on( "end", function(  ) {
+        if(request.url === "/submit") {
+            const inputedData = JSON.parse(dataString)
+            appdata.push(inputedData)
+            //console.log("Recent Input Data: " + JSON.stringify(inputedData))
+            console.log("App Data: " + JSON.stringify(appdata))
+        }
+        response.writeHead( 200, "OK", {"Content-Type": "application/json" })
+        //response.writeHead( 200, "OK", {"Content-Type": "text/plain" })
+        response.end(JSON.stringify(appdata))
 
-        // ... do something with the data here and at least generate the derived data
-
-        response.writeHead( 200, "OK", {"Content-Type": "text/plain" })
-        response.end("text")
     })
+
 }
 
 const sendFile = function( response, filename ) {
@@ -75,6 +85,8 @@ const sendFile = function( response, filename ) {
         }
     })
 }
+
+
 
 // process.env.PORT references the port that Glitch uses
 // the following line will either use the Glitch port or one that we provided

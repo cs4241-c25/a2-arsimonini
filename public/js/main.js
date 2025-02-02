@@ -6,21 +6,33 @@ const submit = async function( event ) {
     // this was the original browser behavior and still
     // remains to this day
     event.preventDefault()
+    const gameInput0 = document.querySelector("#name")
+    const gameInput1 = document.querySelector("#favCon")
+    const gameInput2 = document.querySelector("#favGame")
+    const gameInput3 = document.querySelector("#compl")
 
-    const input = document.querySelector( "#yourname" ),
-        json = { yourname: input.value },
-        body = JSON.stringify( json )
+    //console.log(gameInput0.value)
 
-    const response = await fetch( "/submit", {
-        method:'POST',
-        body
-    })
+    const json = {
+        userName: gameInput0.value,
+        favConsole: gameInput1.value,
+        favGame: gameInput2.value,
+        completed: gameInput3.value}
 
-    const text = await response.text()
-    console.log( "text:", text )
+    console.log(json)
+
+    const body = JSON.stringify( json )
+
+    console.log( body );
+
+    await fetch("/submit", {method: 'POST', body})
+
+
+
+
 }
 
 window.onload = function() {
-    const button = document.querySelector("button");
+    const button = document.querySelector("#submit");
     button.onclick = submit;
 }
