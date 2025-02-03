@@ -11,7 +11,7 @@ const http = require( "node:http" ),
     port = 3000
 
 //Appdata, I should likely try to update this
-const appdata = [
+let appdata = [
    /* { "favConsole": "toyota", "favGame": "Mario", "completed?": "Yes" },
     { "favConsole": "nintendo", "favGame": "Luigi", "completed?": "No" },
     { "favConsole": "xbox", "favGame": "Zelda", "completed?": "Yes" }*/
@@ -19,6 +19,7 @@ const appdata = [
 
 // let fullURL = ""
 const server = http.createServer( function( request,response ) {
+
     if( request.method === "GET" ) {
         handleGet( request, response )
     }else if( request.method === "POST" ){
@@ -35,7 +36,13 @@ const handleGet = function( request, response ) {
 
     if( request.url === "/" ) {
         sendFile( response, "public/index.html" )
-    }else{
+    }else if( request.url === "/results.html" ) {
+        sendFile( response, filename )
+    }
+    else if( request.url === "/table") {
+        response.end(JSON.stringify(appdata))
+    }
+    else {
         sendFile( response, filename )
     }
 }
@@ -55,10 +62,22 @@ const handlePost = function( request, response ) {
             appdata.push(inputedData)
             //console.log("Recent Input Data: " + JSON.stringify(inputedData))
             console.log("App Data: " + JSON.stringify(appdata))
+
+            response.writeHead(200, "OK", {"Content-Type": "application/json"})
+            //response.writeHead( 200, "OK", {"Content-Type": "text/plain" })
+            response.end(JSON.stringify(appdata))
         }
-        response.writeHead( 200, "OK", {"Content-Type": "application/json" })
-        //response.writeHead( 200, "OK", {"Content-Type": "text/plain" })
-        response.end(JSON.stringify(appdata))
+        else if( request.url === "/update") {
+            const inputedData = JSON.parse(dataString)
+            appdata = inputedData
+            //console.log("Recent Input Data: " + JSON.stringify(inputedData))
+            console.log("App Data: " + JSON.stringify(appdata))
+
+
+            response.writeHead(200, "OK", {"Content-Type": "application/json"})
+            //response.writeHead( 200, "OK", {"Content-Type": "text/plain" })
+            response.end(JSON.stringify(appdata))
+        }
 
     })
 
@@ -85,6 +104,8 @@ const sendFile = function( response, filename ) {
         }
     })
 }
+
+
 
 
 

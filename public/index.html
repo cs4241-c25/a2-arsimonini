@@ -8,19 +8,80 @@
 
     <!-- get rid of favicon error -->
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
 </head>
+
+<header>
+    <nav id ="NavBar">
+        <ul>
+            <li> <a href="index.html"> Home </a></li>
+            <li> <a href="results.html"> Results </a></li>
+        </ul>
+    </nav>
+</header>
+
+
 <body>
+<h2>Survey Questions</h2>
+
 <form>
-    <label for="name">Your Name: </label><input type="text" id="name" value="enter name here">
-    <label for="favCon">What is your favorite console?: </label><input type="text" id="favCon" value="enter console here">
-    <label for="favGame">What is your favorite game?: </label><input type="text" id="favGame" value="enter game name here">
-    <label for="compl">Have you Completed Game Fully: </label><input type="text" id="compl" value="yes or no?">
-    <button id = "submit">submit</button>
+    <div>
+    <label for="name">1) Your Name: </label>
+    </div>
+    <div>
+    <input type="text" id="name" value="enter name here">
+    </div>
+    <br>
+    <br>
+    <label for="favCon">2) What is your Favorite Console?: </label><input type="text" id="favCon" value="enter console here">
+    <br>
+    <br>
+    <label for="favGame">3) What is your Favorite Game?: </label><input type="text" id="favGame" value="enter game name here">
+    <br>
+    <br>
+    <label for="compl">4) Have you Completed Game Fully?: </label><input type="text" id="compl" value="yes or no?">
+    <br>
+    <br>
+    <label for="spent">5) About how much did you Spend on the Game?: </label><input type="text" id="spent" value="input a number">
+    <br>
+    <br>
+    <label for="hours">6) About how long have you Played the Game?: </label><input type="text" id="hours" value="input a number?">
+    <br>
+    <br>
+    <br>
+    <br>
+    <button id = "submit">Submit</button>
 </form>
 <h2>Results</h2>
+<p> This is where you can view previous answers as well as edit the data </p>
+<div>
+<table id = "bigTable">
+    <tr>
+        <th> Index </th>
+        <th> Name </th>
+        <th> Favorite Console </th>
+        <th> Favorite Game </th>
+        <th> Is Completed? </th>
+        <th> Spent? </th>
+        <th> Hours Player? </th>
+        <th> Hour per Dollar </th>
+    </tr>
+    <tbody id = "bigTableBody">
+
+    </tbody>
+</table>
+</div>
+
+
 <b id="demo"></b>
 <hr />
-<h2>Bottom of Page</h2>
+<footer>
+    <p><i>copyright Andrew Simonini, 2025 </i></p>
+</footer>
+
 
 </body>
 </html>

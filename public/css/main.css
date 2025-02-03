@@ -1,4 +1,87 @@
-body {
-    background:black;
-    color:white;
+.jersey-15-regular {
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
 }
+
+/* Nav Bar */
+#NavBar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    background-color: #CA3022;
+}
+#NavBar li {
+    float: left;
+}
+#NavBar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#NavBar li a:hover:not(.active) {
+    background-color: #75403B;
+}
+
+.active {
+    background-color: rgba(255, 218, 0, 100);
+}
+
+/* About Me / Index */
+table,th,td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color: #4B3432;
+}
+
+th {
+    background-color: lightblue;
+    text-align: center;
+    font-size: large;
+    border-color: white;
+}
+td:nth-child(odd) {
+    background-color: #FB1010AB;
+    text-align: center;
+    font-size: medium;
+    border-color: white;
+}
+td:nth-child(even) {
+    background-color: #CA3022;
+    text-align: center;
+    font-size: medium;
+    border-color: white;
+}
+
+/* General Page */
+body {
+    background-color: #A03E35;
+
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.85);
+    font-family: "Jersey 15", serif;
+    font-size: xx-large;
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    font-family: "Jersey 15", serif;
+    font-size: x-large;
+    text-effect: emboss;
+}
+
+
+p {
+    display: flex;
+    justify-content: center;
+}
+
