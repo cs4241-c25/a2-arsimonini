@@ -115,7 +115,7 @@ function editData(button) {
     currAllData[parseInt(indexVal)].completed = completionInput;
     currAllData[parseInt(indexVal)].moneySpent = spentInput;
     currAllData[parseInt(indexVal)].hoursPlayed = hoursInput;
-    currAllData[parseInt(indexVal)].spentPlayer = parseFloat(col4.value) / parseFloat(col5.value);
+    currAllData[parseInt(indexVal)].spentPlayer = parseFloat(spentInput) / parseFloat(hoursInput);
 
 
 

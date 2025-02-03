@@ -71,11 +71,20 @@ h2 {
     font-size: xx-large;
 }
 
-label {
+div {
     display: flex;
     justify-content: center;
+}
+
+label {
     font-family: "Jersey 15", serif;
     font-size: x-large;
+    text-effect: emboss;
+}
+
+input, text {
+    background-color: blanchedalmond;
+    color: black;
     text-effect: emboss;
 }
 
