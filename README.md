@@ -21,7 +21,7 @@ For CSS, there are various objects styled with id selectors, positioning, font r
 To go through a couple, The NavBar is a named id with the ul, li, li a, etc all updated with rules.
 The table and all of it's elements have styling rules as well. Not to mention the labels and inputs for
 the form having more color and sizes. Finally, the Headers and Tables are use a flexbox to center them.
-These are just a couple of examples. (should have enough for all 16 points)
+I also use a font in each style rule. These are just a couple of examples. (should have enough for all 16 points)
 
 In total, this should make up 60% of the base points.
 
@@ -43,21 +43,46 @@ using the Edit button. This data is saved across the pages.
 
 Test 1
 1. Provide the last name of each student you conduct the evaluation with.
+
 Branchaud
+
 2. What problems did the user have with your design?
+
 The user said that it not clearing the data fields was problematic.
 The indexes also can change an incorrectly show (after deleting data)
+
 3. What comments did they make that surprised you?
+
 It surprised me that they noticed the indexing. I knew about the other
 clearing fields issue.
+
 4. What would you change about the interface based on their feedback?
+
 I'd fix the clearing (I have the code for it), I'd fix the indexing issue.
 
 Test 2
 1. Provide the last name of each student you conduct the evaluation with.
+
+Medailleu
+
 2. What problems did the user have with your design?
+
+Editing data required clicking through ones that he didn't want to edit. 
+(if you wanted to edit favorite game, then you had to also "edit" favorite
+console). He also saw more value in it being for a single user
+
 3. What comments did they make that surprised you?
+
+The single user comment stood out to me in particular. I was considering more
+of a form website where people share their favorite games/consoles and then
+someone can take data for it. He viewed it as more of a place to database
+your own games.
+
 4. What would you change about the interface based on their feedback?
+
+I would fix the edit issue with more time, and maybe make it more user friendly
+for one person use.
+
 
 
 
